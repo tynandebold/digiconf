@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  position: absolute;
+}
+
+.icon {
+  background-color: #fff;
+  color: #000;
+  font-size: 1.7em;
+  font-weight: 300;
+  padding: 0 0.3em;
+}
+
+@media (max-width: 768px) {
+  .icon {
+    font-size: 1em;
+  }
+}
+
+.anchor {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.6;
+  padding: 0.4em 0.75em;
+}
+
+@media (max-width: 768px) {
+  .anchor {
+    font-size: 0.75em;
+    padding: 0.2em 0.375em;
+  }
+}

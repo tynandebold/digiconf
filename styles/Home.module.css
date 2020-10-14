@@ -1,0 +1,21 @@
+.container {
+  min-height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}
