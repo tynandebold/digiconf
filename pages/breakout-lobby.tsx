@@ -1,35 +1,36 @@
 import Head from 'next/head';
-import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 
 import Breadcrumb from '../components/Breadcrumb';
+import VenueIcon from '../components/VenueIcon';
 import styles from '../styles/Home.module.css';
 
-type Props = {
-  path: string;
-};
+export default function BreakoutLobby() {
+  const router = useRouter();
 
-const BreakoutLobby: NextPage<Props> = ({ path }) => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>DigiConf Prototype</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
+      <div className={styles.content}>
+        <Head>
+          <title>DigiConf Prototype</title>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+        </Head>
+        <img
+          src="/breakout-lobby.jpg"
+          alt="Breakout Lobby"
+          className={styles.image}
         />
-      </Head>
-      <img
-        src="/breakout-lobby.jpg"
-        alt="Breakout Lobby"
-        className={styles.image}
-      />
-      <Breadcrumb path={path} title="V-EXPO 04.09.2020" />
+        <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
+        <VenueIcon
+          altText="Venue icon"
+          path="/venue.png"
+          position={[92, 3]}
+          width="85"
+        />
+      </div>
     </div>
   );
-};
-
-BreakoutLobby.getInitialProps = async (ctx) => {
-  return { path: ctx.pathname };
-};
-
-export default BreakoutLobby;
+}

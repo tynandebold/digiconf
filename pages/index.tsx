@@ -1,15 +1,14 @@
 import Head from 'next/head';
-import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 
 import Anchor from '../components/Anchor';
 import Breadcrumb from '../components/Breadcrumb';
+import VenueIcon from '../components/VenueIcon';
 import styles from '../styles/Home.module.css';
 
-type Props = {
-  path: string;
-};
+export default function Home() {
+  const router = useRouter();
 
-const Home: NextPage<Props> = ({ path }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -46,14 +45,14 @@ const Home: NextPage<Props> = ({ path }) => {
           href="/information"
           position={[83, 71]}
         />
-        <Breadcrumb path={path} title="V-EXPO 04.09.2020" />
+        <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
+        <VenueIcon
+          altText="Venue icon"
+          path="/venue.png"
+          position={[92, 3]}
+          width="85"
+        />
       </div>
     </div>
   );
-};
-
-Home.getInitialProps = async (ctx) => {
-  return { path: ctx.pathname };
-};
-
-export default Home;
+}
