@@ -30,7 +30,7 @@ export default function Breadcrumb({ path, title }: Props) {
     <div className={styles.wrapper}>
       <div className={styles.links}>
         <Link href="/">
-          <a className={styles.link}>{`H`}</a>
+          <a className={styles.link}>H</a>
         </Link>
         <Link href="/">
           <a className={styles.link}>{`<-`}</a>

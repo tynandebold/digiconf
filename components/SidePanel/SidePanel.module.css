@@ -1,0 +1,10 @@
+.panel {
+  background-color: #fff;
+  bottom: 3px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: transform 0.3s ease 0s;
+  width: 25%;
+}

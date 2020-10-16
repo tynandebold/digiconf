@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Anchor from '../components/Anchor';
 import Breadcrumb from '../components/Breadcrumb';
+import SidePanel from '../components/SidePanel';
 import VenueIcon from '../components/VenueIcon';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const router = useRouter();
+  const [hideSidePanel, setHideSidePanel] = useState(true);
+
+  const handleSidePanelExpand = () => {
+    setHideSidePanel(!hideSidePanel);
+  };
 
   return (
     <div className={styles.container}>
@@ -30,6 +37,13 @@ export default function Home() {
         >
           <source src="/lobby.mp4" type="video/mp4"></source>
         </video>
+        <div
+          className={styles.sidePanelBtn}
+          onClick={handleSidePanelExpand}
+          style={{ zIndex: 1 }}
+        >
+          ☰
+        </div>
         <Anchor
           destination="Main Stage"
           href="/main-stage"
@@ -46,6 +60,7 @@ export default function Home() {
           position={[83, 71]}
         />
         <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
+        <SidePanel hidden={hideSidePanel} />
         <VenueIcon
           altText="Venue icon"
           path="/venue.png"
