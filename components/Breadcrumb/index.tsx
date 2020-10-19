@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import styles from './Breadcrumb.module.css';
 
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export default function Breadcrumb({ path, title }: Props) {
+  const router = useRouter();
   const [location, setLocation] = useState('');
 
   useEffect(() => {
@@ -33,7 +35,10 @@ export default function Breadcrumb({ path, title }: Props) {
           <a className={styles.link}>H</a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>{`<-`}</a>
+          <span
+            className={styles.link}
+            onClick={() => (router.pathname === '/' ? null : router.back())}
+          >{`<-`}</span>
         </Link>
       </div>
       <div className={styles.text}>

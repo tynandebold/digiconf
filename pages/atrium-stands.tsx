@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Anchor from '../components/Anchor';
 import Breadcrumb from '../components/Breadcrumb';
 import VenueIcon from '../components/VenueIcon';
+
 import styles from '../styles/Home.module.css';
 
-export default function BreakoutLobby() {
+export default function AtriumStands() {
   const router = useRouter();
 
   return (
@@ -19,16 +19,16 @@ export default function BreakoutLobby() {
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
         </Head>
-        <img
-          src="/breakout-lobby.jpg"
-          alt="Breakout Lobby"
-          className={styles.image}
-        />
-        <Anchor
-          destination="Breakout Room 1"
-          href="/breakout-room-1"
-          position={[44.25, 51]}
-        />
+        <video
+          autoPlay
+          className={styles.video}
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src="/atrium-stands.mp4" type="video/mp4"></source>
+        </video>
         <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
         <VenueIcon
           altText="Venue icon"

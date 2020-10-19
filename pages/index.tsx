@@ -59,6 +59,22 @@ export default function Home() {
           href="/information"
           position={[83, 71]}
         />
+        <Anchor
+          destination="Content Library"
+          href="/content-library"
+          position={[36, 82]}
+        />
+        <Anchor destination="Community" href="/community" position={[48, 50]} />
+        <Anchor
+          destination="Exhibition Hall"
+          href="/exhibition-hall"
+          position={[78, 32]}
+        />
+        <Anchor
+          destination="Atrium Stands"
+          href="/atrium-stands"
+          position={[78, 42]}
+        />
         <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
         <SidePanel hidden={hideSidePanel} />
         <VenueIcon

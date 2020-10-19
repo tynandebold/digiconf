@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Anchor from '../components/Anchor';
 import Breadcrumb from '../components/Breadcrumb';
 import VenueIcon from '../components/VenueIcon';
 import styles from '../styles/Home.module.css';
 
-export default function BreakoutLobby() {
+export default function BreakoutRoom1() {
   const router = useRouter();
 
   return (
@@ -20,14 +19,9 @@ export default function BreakoutLobby() {
           />
         </Head>
         <img
-          src="/breakout-lobby.jpg"
-          alt="Breakout Lobby"
+          src="/breakout-room-1.jpg"
+          alt="Breakout Room 1"
           className={styles.image}
-        />
-        <Anchor
-          destination="Breakout Room 1"
-          href="/breakout-room-1"
-          position={[44.25, 51]}
         />
         <Breadcrumb path={router.pathname} title="V-EXPO 04.09.2020" />
         <VenueIcon
